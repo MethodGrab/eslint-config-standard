@@ -3,12 +3,14 @@
   "version": "0.1.0",
   "description": "ESLint config",
   "main": "index.js",
+  "files": [
+    "index.js",
+    "modern.js",
+    "strict.js"
+  ],
   "scripts": {
     "test": "mocha"
   },
-  "files": [
-    "index.js"
-  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/methodgrab/eslint-config-standard.git"
@@ -29,6 +31,9 @@
     "url": "https://github.com/methodgrab/eslint-config-standard/issues"
   },
   "homepage": "https://github.com/methodgrab/eslint-config-standard",
+  "dependencies": {
+    "lodash": "^3.9.1"
+  },
   "devDependencies": {
     "chai": "^2.3.0",
     "coffee-script": "^1.9.2",
