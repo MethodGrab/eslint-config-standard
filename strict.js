@@ -9,8 +9,8 @@ var extras = {
 
 	'rules' : {
 		'no-param-reassign'   : 2,
-		'strict'              : [2, 'global'],
-		'handle-callback-err' : [2, '^(err|error)$' ],
+		'strict'              : [ 2, 'global' ],
+		'handle-callback-err' : [ 2, '^(err|error)$' ],
 		'no-mixed-requires'   : [ 1, true ],
 		'no-sync'             : 1,
 		'new-cap'             : 1,
