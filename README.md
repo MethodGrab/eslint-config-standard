@@ -34,4 +34,4 @@ Example usage:
 	"extends" : "@methodgrab/eslint-config-standard/modern"
 }
 ```
-**NB: The `eslint-config-standard` prefix is required for sub-configs**
+**NB: The `eslint-config-` prefix is required for sub-configs**
