@@ -1,4 +1,4 @@
-# ESLint Config
+# eslint-config-standard [![Build Status](https://travis-ci.org/MethodGrab/eslint-config-standard.svg?branch=master)](https://travis-ci.org/MethodGrab/eslint-config-standard)
 
 My ESLint [shareable config](http://eslint.org/docs/developer-guide/shareable-configs).  
 Requires `eslint >= 0.21.2` ([eslint#2544](https://github.com/eslint/eslint/issues/2544)).
