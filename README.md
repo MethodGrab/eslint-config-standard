@@ -31,7 +31,6 @@ In addition to the default config, there are others than can be used that extend
 Example usage:
 ```
 {
-	"extends" : "@methodgrab/eslint-config-standard/modern"
+	"extends" : "@methodgrab/standard/modern"
 }
 ```
-**NB: The `eslint-config-` prefix is required for sub-configs**
