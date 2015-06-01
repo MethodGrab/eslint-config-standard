@@ -114,7 +114,7 @@ module.exports = {
 		'no-undef-init'                     : 2,
 		'no-undef'                          : 2,
 		'no-undefined'                      : 1,
-		'no-unused-vars'                    : [ 1, { 'vars' : 'all', 'args' : 'none' } ],
+		'no-unused-vars'                    : [ 0, { 'vars' : 'all', 'args' : 'none' } ],
 		'no-use-before-define'              : [ 1, 'nofunc' ],
 
 		// Node.js
