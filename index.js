@@ -11,17 +11,15 @@
 module.exports = {
 
 	'env' : {
-		'browser' : true,
-		'node'    : true,
-		'amd'     : false,
-		'mocha'   : true,
-		'jasmine' : false,
+		'node'  : true,
+		'mocha' : true,
+		'es6'   : true,
 	},
 
 	'rules' : {
 
 		// Possible errors
-		'comma-dangle'                      : [ 2, 'never' ], // es3
+		'comma-dangle'                      : [ 0, 'always-multiline' ],
 		'no-cond-assign'                    : 2,
 		'no-console'                        : 0,
 		'no-constant-condition'             : 2,
@@ -43,7 +41,7 @@ module.exports = {
 		'no-negated-in-lhs'                 : 2,
 		'no-obj-calls'                      : 2,
 		'no-regex-spaces'                   : 2,
-		'no-reserved-keys'                  : 1, // es3
+		'no-reserved-keys'                  : 0,
 		'no-sparse-arrays'                  : 2,
 		'no-unreachable'                    : 2,
 		'use-isnan'                         : 2,
@@ -56,7 +54,7 @@ module.exports = {
 		'consistent-return'                 : 2,
 		'curly'                             : [ 2, 'all' ],
 		'default-case'                      : 0,
-		'dot-notation'                      : [ 2, { 'allowKeywords' : false } ], // es3
+		'dot-notation'                      : [ 2, { 'allowKeywords' : true } ],
 		'dot-location'                      : 0,
 		'eqeqeq'                            : 2,
 		'guard-for-in'                      : 0,
@@ -97,16 +95,16 @@ module.exports = {
 		'no-void'                           : 0,
 		'no-warning-comments'               : [ 0, { 'terms' : [ 'todo', 'fixme', 'xxx' ], 'location' : 'start' } ],
 		'no-with'                           : 2,
-		'radix'                             : 1, // es3
+		'radix'                             : 0,
 		'vars-on-top'                       : 0,
 		'wrap-iife'                         : [ 1, 'outside' ],
 		'yoda'                              : [ 2, 'never' ],
 
 		// Strict mode
-		'strict'                            : [ 0, 'global' ],
+		'strict'                            : [ 2, 'global' ],
 
 		// Variables
-		'no-catch-shadow'                   : 2,
+		'no-catch-shadow'                   : 0,
 		'no-delete-var'                     : 2,
 		'no-label-var'                      : 2,
 		'no-shadow-restricted-names'        : 2,

@@ -7,7 +7,7 @@ eslintrc = null
 
 describe 'eslint-config-standard', ->
 
-	configs = [ 'index', 'modern', 'strict' ]
+	configs = [ 'index', 'legacy', 'strict' ]
 
 	configs.forEach ( config ) ->
 

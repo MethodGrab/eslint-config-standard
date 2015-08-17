@@ -25,12 +25,13 @@ You can override settings from the shared config by adding them directly into yo
 
 ## Additional Configs
 In addition to the default config, there are others than can be used that extend the default config:
-* modern - drops ES3 support
-* strict - less relaxed
+* `browser` - browser env
+* `legacy` - `browser` + ES3 support
+* `strict` - less relaxed
 
 Example usage:
 ```
 {
-	"extends" : "@methodgrab/standard/modern"
+	"extends" : "@methodgrab/standard/browser"
 }
 ```

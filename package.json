@@ -32,7 +32,7 @@
   },
   "homepage": "https://github.com/methodgrab/eslint-config-standard",
   "dependencies": {
-    "lodash": "^3.9.1"
+    "lodash.merge": "^3.3.2"
   },
   "devDependencies": {
     "chai": "^2.3.0",
