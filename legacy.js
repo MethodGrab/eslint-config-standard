@@ -17,7 +17,7 @@ var extras = {
 	'rules' : {
 		// Possible errors
 		'comma-dangle'     : [ 2, 'never' ],
-		'no-reserved-keys' : 2,
+		'quote-props'      : [ 2, 'as-needed', { 'keywords' : true } ],
 
 		// Best practices
 		'dot-notation'     : [ 2, { 'allowKeywords' : false } ],
