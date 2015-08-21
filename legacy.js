@@ -9,8 +9,8 @@ var extras = {
 
 	'env' : {
 		'browser'  : true,
-		'commonjs' : true,
 		'node'     : false,
+		'commonjs' : true,
 		'mocha'    : false,
 		'es6'      : false,
 	},
