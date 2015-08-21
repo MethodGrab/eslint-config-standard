@@ -9,20 +9,25 @@ var extras = {
 
 	'rules' : {
 		// Best practices
-		'no-param-reassign'   : 2,
+		'no-param-reassign'         : 2,
 
 		// Strict mode
-		'strict'              : [ 2, 'global' ],
+		'strict'                    : [ 2, 'global' ],
 
 		// Node.js
-		'handle-callback-err' : [ 2, '^(err|error)$' ],
-		'no-mixed-requires'   : [ 1, true ],
-		'no-sync'             : 1,
+		'handle-callback-err'       : [ 2, '^(err|error)$' ],
+		'no-mixed-requires'         : [ 1, true ],
+		'no-sync'                   : 1,
 
 		// Stylistic issues
-		'new-cap'             : 1,
-		'new-parens'          : 1,
-		'no-lonely-if'        : 1,
+		'computed-property-spacing' : 1,
+		'new-cap'                   : 1,
+		'new-parens'                : 1,
+		'no-lonely-if'              : 1,
+		'object-curly-spacing'      : 1,
+
+		// ES2015 (ES6)
+		'prefer-const'              : 1,
 	},
 
 };

@@ -1,5 +1,6 @@
 //
 // Based on eslint 0.21.2 config
+// Updated to include the new rules up to eslint 1.2.1
 //
 // @link https://github.com/eslint/eslint/blob/v0.21.2/conf/eslint.json
 // @link http://eslint.org/docs/rules
@@ -11,9 +12,10 @@
 module.exports = {
 
 	'env' : {
-		'node'  : true,
-		'mocha' : true,
-		'es6'   : true,
+		'node'     : true,
+		'commonjs' : true,
+		'mocha'    : true,
+		'es6'      : true,
 	},
 
 	'rules' : {
@@ -46,8 +48,10 @@ module.exports = {
 		'use-isnan'                         : 2,
 		'valid-jsdoc'                       : 0,
 		'valid-typeof'                      : 2,
+		'no-unexpected-multiline'           : 2,
 
 		// Best practices
+		'accessor-pairs'                    : 1,
 		'block-scoped-var'                  : 0,
 		'complexity'                        : [ 0, 11 ],
 		'consistent-return'                 : 2,
@@ -68,7 +72,9 @@ module.exports = {
 		'no-extra-bind'                     : 2,
 		'no-fallthrough'                    : 1,
 		'no-floating-decimal'               : 1,
+		'no-implicit-coercion'              : 0,
 		'no-implied-eval'                   : 2,
+		'no-invalid-this'                   : 1,
 		'no-iterator'                       : 2,
 		'no-labels'                         : 2,
 		'no-lone-blocks'                    : 2,
@@ -91,6 +97,7 @@ module.exports = {
 		'no-sequences'                      : 2,
 		'no-throw-literal'                  : 1,
 		'no-unused-expressions'             : 1,
+		'no-useless-call'                   : 1,
 		'no-void'                           : 0,
 		'no-warning-comments'               : [ 0, { 'terms' : [ 'todo', 'fixme', 'xxx' ], 'location' : 'start' } ],
 		'no-with'                           : 2,
@@ -103,6 +110,7 @@ module.exports = {
 		'strict'                            : [ 2, 'global' ],
 
 		// Variables
+		'init-declarations'                 : 0,
 		'no-catch-shadow'                   : 0,
 		'no-delete-var'                     : 2,
 		'no-label-var'                      : 2,
@@ -115,6 +123,7 @@ module.exports = {
 		'no-use-before-define'              : [ 1, 'nofunc' ],
 
 		// Node.js
+		'callback-return'                   : [2, [ 'callback', 'cb', 'next', 'done' ] ],
 		'handle-callback-err'               : 0,
 		'no-mixed-requires'                 : [ 0, true ],
 		'no-new-require'                    : 1,
@@ -124,16 +133,22 @@ module.exports = {
 		'no-sync'                           : 0,
 
 		// Stylistic issues
+		'array-bracket-spacing'             : [ 0, 'always' ],
+		'block-spacing'                     : [ 1, 'always' ],
 		'brace-style'                       : [ 0, '1tbs', { 'allowSingleLine' : true } ],
 		'camelcase'                         : 1,
 		'comma-spacing'                     : 0,
 		'comma-style'                       : [ 0, 'last' ],
+		'computed-property-spacing'         : 0,
 		'consistent-this'                   : [ 0, 'self' ],
 		'eol-last'                          : 0,
 		'func-names'                        : 0,
 		'func-style'                        : [ 0, 'declaration' ],
+		'id-length'                         : 0,
+		'id-match'                          : 0,
 		'indent'                            : [ 1, 'tab', { 'SwitchCase' : 1, 'VariableDeclarator' : 1 } ],
 		'key-spacing'                       : [ 0, { 'beforeColon' : true, 'afterColon' : true } ],
+		'lines-around-comment'              : 0,
 		'linebreak-style'                   : [ 1, 'unix' ],
 		'max-nested-callbacks'              : [ 0, 2 ],
 		'new-cap'                           : 0,
@@ -152,6 +167,7 @@ module.exports = {
 		'no-trailing-spaces'                : 1,
 		'no-underscore-dangle'              : 0,
 		'no-unneeded-ternary'               : 1,
+		'object-curly-spacing'              : 0,
 		'one-var'                           : [ 0, 'never' ],
 		'operator-assignment'               : [ 0, 'always' ],
 		'operator-linebreak'                : [ 0, 'after' ],
@@ -169,13 +185,26 @@ module.exports = {
 		'space-infix-ops'                   : 0,
 		'space-return-throw-case'           : 1,
 		'space-unary-ops'                   : [ 0, { 'words' : true, 'nonwords' : false } ],
-		'spaced-line-comment'               : [ 0, 'always' ],
+		'spaced-comment'                    : [ 0, 'always' ],
 		'wrap-regex'                        : 0,
 
-		// ES6
+		// ES2015 (ES6)
+		'arrow-parens'                      : [ 2, 'as-needed' ],
+		'arrow-spacing'                     : [ 2, { 'before' : true, 'after' : true } ],
+		'constructor-super'                 : 2,
 		'generator-star-spacing'            : 0,
+		'no-class-assign'                   : 1,
+		'no-const-assign'                   : 2,
+		'no-dupe-class-members'             : 2,
+		'no-this-before-super'              : 2,
 		'no-var'                            : 0,
 		'object-shorthand'                  : 0,
+		'prefer-arrow-callback'             : 1,
+		'prefer-const'                      : 0,
+		'prefer-spread'                     : 1,
+		'prefer-reflect'                    : 0,
+		'prefer-template'                   : 1,
+		'require-yield'                     : 1,
 
 		// Legacy
 		'max-depth'                         : [ 0, 4 ],
