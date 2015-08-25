@@ -37,8 +37,11 @@
   "devDependencies": {
     "chai": "^2.3.0",
     "coffee-script": "^1.9.2",
-    "eslint": "^1.2.0",
+    "eslint": "^1.2.1",
     "mocha": "^2.2.5",
     "temp-write": "^1.1.2"
+  },
+  "peerDependencies": {
+    "eslint": ">=1.2.1"
   }
 }
