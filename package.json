@@ -1,11 +1,12 @@
 {
   "name": "@methodgrab/eslint-config-standard",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "description": "ESLint config",
   "main": "index.js",
   "files": [
     "index.js",
-    "modern.js",
+    "browser.js",
+    "legacy.js",
     "strict.js"
   ],
   "scripts": {
