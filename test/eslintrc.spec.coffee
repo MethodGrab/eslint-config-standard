@@ -33,7 +33,7 @@ describe 'eslint-config-standard', ->
 				catch error
 					errored = error
 
-				assert.notInstanceOf( errored, Error, "it shouldn't throw error" )
+				assert.notInstanceOf( errored, Error, 'it should not throw an error' )
 
 
 			it 'should return an object', ->
