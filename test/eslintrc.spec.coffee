@@ -5,7 +5,6 @@ eslint    = require 'eslint'
 tempWrite = require 'temp-write'
 
 
-
 runEslint = ( str, conf ) ->
 	linter = new eslint.CLIEngine(
 		useEslintrc : false,
@@ -21,7 +20,7 @@ describe 'eslint-config-standard', ->
 
 	configs.forEach ( config ) ->
 
-		describe "#{config}", ->
+		describe "#{config}.js", ->
 
 			conf = null
 
@@ -54,3 +53,23 @@ describe 'eslint-config-standard', ->
 					console.log( errors )
 
 				assert.isUndefined( messages, 'eslint errors found' )
+
+
+			if config == 'legacy'
+				it 'should be ES3 compatible', ->
+					errors = runEslint(
+						'''
+						'use strict';
+						var foo = { bar: 123, };
+						var baz = { catch: function(){} };
+						baz.catch();
+						var int = parseInt( '10' );
+						'''
+					, conf )
+
+					assert.equal( errors.length, 4, "Expected 4 errors found #{errors.length}" )
+
+					assert.equal( errors[0].message, 'Unexpected trailing comma.' )
+					assert.equal( errors[1].message, 'Unquoted reserved word `catch` used as key.' )
+					assert.equal( errors[2].message, '.catch is a syntax error.' )
+					assert.equal( errors[3].message, 'Missing radix parameter.' )

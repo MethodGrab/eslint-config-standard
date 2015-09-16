@@ -1,19 +1,9 @@
-// extends index.js
-
 'use strict';
 
 var merge = require( 'lodash.merge' );
 
 
 var extras = {
-
-	'env' : {
-		'browser'  : true,
-		'node'     : false,
-		'commonjs' : true,
-		'mocha'    : false,
-		'es6'      : false,
-	},
 
 	'rules' : {
 		// Possible errors
@@ -26,13 +16,9 @@ var extras = {
 
 		// Variables
 		'no-catch-shadow'       : 2,
-
-		// ES2015 (ES6)
-		'prefer-arrow-callback' : 0,
-		'prefer-template'       : 0,
 	},
 
 };
 
 
-module.exports = merge( {}, require( './index' ), extras );
+module.exports = merge( {}, require( './browser' ), extras );

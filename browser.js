@@ -1,5 +1,3 @@
-// extends index.js
-
 'use strict';
 
 var merge = require( 'lodash.merge' );
