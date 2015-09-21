@@ -25,9 +25,6 @@ var extras = {
 		'object-curly-spacing'      : 1,
 		'space-after-keywords'      : [ 1, 'always' ],
 		'space-before-keywords'     : [ 1, 'always' ],
-
-		// ES2015 (ES6)
-		'prefer-const'              : 1,
 	},
 
 };

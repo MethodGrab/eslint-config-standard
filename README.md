@@ -25,9 +25,10 @@ You can override settings from the shared config by adding them directly into yo
 
 ## Additional Configs
 In addition to the default config, there are others than can be used that extend the default config:
+* `strict` - less relaxed
+* `es2015` - ES2015 (ES6)
 * `browser` - browser env
 * `legacy` - `browser` + ES3 support
-* `strict` - less relaxed
 
 Example usage:
 ```

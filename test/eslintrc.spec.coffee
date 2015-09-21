@@ -16,7 +16,7 @@ runEslint = ( str, conf ) ->
 
 describe 'eslint-config-standard', ->
 
-	configs = [ 'index', 'strict', 'browser', 'legacy' ]
+	configs = [ 'index', 'strict', 'es2015', 'browser', 'legacy' ]
 
 	configs.forEach ( config ) ->
 

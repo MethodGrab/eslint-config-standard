@@ -5,9 +5,10 @@
   "main": "index.js",
   "files": [
     "index.js",
+    "strict.js",
+    "es2015.js",
     "browser.js",
-    "legacy.js",
-    "strict.js"
+    "legacy.js"
   ],
   "scripts": {
     "test": "mocha"

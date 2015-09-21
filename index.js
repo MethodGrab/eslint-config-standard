@@ -14,7 +14,6 @@ module.exports = {
 	'env' : {
 		'node'     : true,
 		'commonjs' : true,
-		'mocha'    : true,
 		'es6'      : false,
 	},
 
@@ -49,6 +48,7 @@ module.exports = {
 		// 'valid-jsdoc'                       : 0,
 		'valid-typeof'                      : 2,
 		'no-unexpected-multiline'           : 2,
+
 
 		// Best practices
 		'accessor-pairs'                    : 1,
@@ -107,8 +107,10 @@ module.exports = {
 		'wrap-iife'                         : [ 1, 'outside' ],
 		'yoda'                              : [ 2, 'never' ],
 
+
 		// Strict mode
 		'strict'                            : [ 2, 'global' ],
+
 
 		// Variables
 		// 'init-declarations'                 : 0,
@@ -123,6 +125,7 @@ module.exports = {
 		// 'no-unused-vars'                    : [ 0, { 'vars' : 'all', 'args' : 'none' } ],
 		'no-use-before-define'              : [ 1, 'nofunc' ],
 
+
 		// Node.js
 		'callback-return'                   : [2, [ 'callback', 'cb', 'next', 'done' ] ],
 		'global-require'                    : 1,
@@ -133,6 +136,7 @@ module.exports = {
 		'no-process-exit'                   : 1,
 		// 'no-restricted-modules'             : 0,
 		// 'no-sync'                           : 0,
+
 
 		// Stylistic issues
 		// 'array-bracket-spacing'             : [ 0, 'always' ],
@@ -193,28 +197,6 @@ module.exports = {
 		// 'spaced-comment'                    : [ 0, 'always' ],
 		// 'wrap-regex'                        : 0,
 
-		// ES2015 (ES6)
-		'arrow-parens'                      : [ 2, 'as-needed' ],
-		'arrow-spacing'                     : [ 2, { 'before' : true, 'after' : true } ],
-		'constructor-super'                 : 2,
-		// 'generator-star-spacing'            : 0,
-		'no-class-assign'                   : 1,
-		'no-const-assign'                   : 2,
-		'no-dupe-class-members'             : 2,
-		'no-this-before-super'              : 2,
-		// 'no-var'                            : 0,
-		// 'object-shorthand'                  : 0,
-
-		// disable all prefers as they dont take env into account
-		// ideally these would only prefer if the env is `es6: true`
-		// https://github.com/eslint/eslint/issues/3306
-		// 'prefer-arrow-callback'             : 1,
-		// 'prefer-const'                      : 0,
-		// 'prefer-spread'                     : 1,
-		// 'prefer-reflect'                    : 0,
-		// 'prefer-template'                   : 1,
-
-		'require-yield'                     : 1,
 
 		// Legacy
 		// 'max-depth'                         : [ 0, 4 ],
@@ -223,6 +205,7 @@ module.exports = {
 		// 'max-statements'                    : [ 0, 10 ],
 		// 'no-bitwise'                        : 0,
 		// 'no-plusplus'                       : 0,
+
 
 		// Deprecated
 		// 'no-comma-dangle'                   : 0,
