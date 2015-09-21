@@ -16,13 +16,22 @@ runEslint = ( str, conf ) ->
 
 describe 'eslint-config-standard', ->
 
-	configs = [ 'index', 'strict', 'es2015', 'browser', 'legacy' ]
+	configs = [
+		'index'
+		'strict'
+		'es2015'
+		'babel+react'
+		'browser'
+		'legacy'
+	]
 
 	configs.forEach ( config ) ->
 
 		describe "#{config}.js", ->
 
 			conf = null
+
+			@timeout 5000
 
 			it 'should be requireable', ->
 				errored = false
