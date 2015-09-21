@@ -67,7 +67,7 @@ describe 'eslint-config-standard', ->
 						'''
 					, conf )
 
-					assert.equal( errors.length, 4, "Expected 4 errors found #{errors.length}" )
+					assert.equal( errors.length, 4, "Expected 4 errors, found #{errors.length}" )
 
 					assert.equal( errors[0].message, 'Unexpected trailing comma.' )
 					assert.equal( errors[1].message, 'Unquoted reserved word `catch` used as key.' )
