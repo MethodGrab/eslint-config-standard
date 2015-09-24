@@ -6,9 +6,6 @@ var merge = require( 'lodash.merge' );
 var extras = {
 
 	'rules' : {
-		// Best practices
-		'no-param-reassign'         : 2,
-
 		// Strict mode
 		'strict'                    : [ 2, 'global' ],
 
@@ -19,6 +16,7 @@ var extras = {
 
 		// Stylistic issues
 		'computed-property-spacing' : 1,
+		'key-spacing'               : [ 1, { 'beforeColon' : true, 'afterColon' : true, 'mode' : 'minimum' } ],
 		'new-cap'                   : 1,
 		'new-parens'                : 1,
 		'no-lonely-if'              : 1,
