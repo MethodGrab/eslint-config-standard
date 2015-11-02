@@ -12,7 +12,8 @@
     "legacy.js"
   ],
   "scripts": {
-    "test": "mocha"
+    "test": "npm run lint && mocha",
+    "lint": "eslint *.js"
   },
   "repository": {
     "type": "git",
