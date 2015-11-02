@@ -1,10 +1,12 @@
 //
-// Based on eslint 0.21.2 config
-// Updated to include the new rules up to eslint 1.2.1
+// Base config
 //
-// @link https://github.com/eslint/eslint/blob/v0.21.2/conf/eslint.json
 // @link http://eslint.org/docs/rules
 // @link http://eslint.org/docs/user-guide/configuring
+//
+// 0 - off
+// 1 - warning
+// 2 - error
 //
 
 'use strict';
@@ -66,6 +68,7 @@ module.exports = {
 		// 'no-div-regex'                      : 0,
 		'no-else-return'                    : 1,
 		'no-empty-label'                    : 2,
+		'no-empty-pattern'                  : 2,
 		'no-eq-null'                        : 1,
 		'no-eval'                           : 2,
 		'no-extend-native'                  : 2,
@@ -79,6 +82,7 @@ module.exports = {
 		'no-labels'                         : 2,
 		'no-lone-blocks'                    : 2,
 		'no-loop-func'                      : 2,
+		// 'no-magic-numbers'                  : 0,
 		// 'no-multi-spaces'                   : 0,
 		'no-multi-str'                      : 2,
 		'no-native-reassign'                : 2,
@@ -166,6 +170,7 @@ module.exports = {
 		// 'no-lonely-if'                      : 0,
 		'no-mixed-spaces-and-tabs'          : [ 2, 'smart-tabs' ],
 		// 'no-multiple-empty-lines'           : [ 0, { 'max' : 2 } ],
+		'no-negated-condition'              : 1,
 		// 'no-nested-ternary'                 : 0,
 		'no-new-object'                     : 2,
 		// 'no-restricted-syntax'              : 0,

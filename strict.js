@@ -9,6 +9,9 @@ var extras = {
 		// Strict mode
 		'strict'                    : [ 2, 'global' ],
 
+		// Best practices
+		'no-magic-numbers'          : 1,
+
 		// Node.js
 		'handle-callback-err'       : [ 2, '^(err|error)$' ],
 		'no-mixed-requires'         : [ 1, true ],
