@@ -5,21 +5,21 @@ var merge = require( 'lodash.merge' );
 
 var extras = {
 
-	'parser': 'babel-eslint',
+	'parser' : 'babel-eslint',
 
-	'plugins': ['react'],
+	'plugins' : ['react'],
 
-	'env': {
+	'env' : {
 		'browser' : true,
 		'node'    : true,
 		'es6'     : true,
 	},
 
-	'ecmaFeatures': {
+	'ecmaFeatures' : {
 		'jsx' : true,
 	},
 
-	'rules': {
+	'rules' : {
 		'strict'                             : 0,
 
 		'jsx-quotes'                         : [ 1, 'prefer-double' ],
