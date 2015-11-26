@@ -13,7 +13,7 @@ var extras = {
 
 	'rules' : {
 		// ES2015 (ES6)
-		'arrow-body-style'          : [ 2, 'as-needed' ],
+		// 'arrow-body-style'          : [ 2, 'as-needed' ],
 		'arrow-parens'              : [ 2, 'as-needed' ],
 		'arrow-spacing'             : [ 2, { 'before' : true, 'after' : true } ],
 		'constructor-super'         : 2,
