@@ -11,10 +11,17 @@ var extras = {
 		'es6'      : true,
 	},
 
+	'ecmaFeatures' : {
+		'modules' : true,
+	},
+
 	'rules' : {
+		// Strict mode
+		'strict'                    : 0, // es6 modules are always strict
+
 		// ES2015 (ES6)
 		// 'arrow-body-style'          : [ 2, 'as-needed' ],
-		'arrow-parens'              : [ 2, 'as-needed' ],
+		// 'arrow-parens'              : [ 2, 'as-needed' ],
 		'arrow-spacing'             : [ 2, { 'before' : true, 'after' : true } ],
 		'constructor-super'         : 2,
 		// 'generator-star-spacing'    : 0,
