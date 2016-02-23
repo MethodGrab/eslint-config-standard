@@ -70,15 +70,15 @@ describe 'eslint-config-standard', ->
 						'''
 						'use strict';
 						var foo = { bar: 123, };
-						var baz = { catch: function(){} };
+						var baz = { catch: function(){ return true; } };
 						baz.catch();
 						var int = parseInt( '10' );
 						'''
 					, conf )
 
-					assert.equal( errors.length, 4, "Expected 4 errors, found #{errors.length}" )
-
 					assert.equal( errors[0].message, 'Unexpected trailing comma.' )
 					assert.equal( errors[1].message, 'Unquoted reserved word \'catch\' used as key.' )
 					assert.equal( errors[2].message, '.catch is a syntax error.' )
 					assert.equal( errors[3].message, 'Missing radix parameter.' )
+
+					assert.equal( errors.length, 4, "Expected 4 errors, found #{errors.length}" )
