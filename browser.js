@@ -5,15 +5,14 @@ var merge = require( 'lodash.merge' );
 
 var extras = {
 
-	'env' : {
-		'browser'  : true,
-		'node'     : false,
-		'commonjs' : true,
-		'es6'      : false,
+	env : {
+		browser  : true,
+		node     : false,
+		commonjs : true,
+		es6      : false,
 	},
 
-	'rules' : {
-	},
+	rules : {},
 
 };
 

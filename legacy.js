@@ -5,7 +5,11 @@ var merge = require( 'lodash.merge' );
 
 var extras = {
 
-	'rules' : {
+	parserOptions : {
+		ecmaVersion : 3,
+	},
+
+	rules : {
 		// Possible errors
 		'comma-dangle'          : [ 2, 'never' ],
 		'quote-props'           : [ 2, 'as-needed', { 'keywords' : true } ],

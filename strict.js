@@ -5,7 +5,7 @@ var merge = require( 'lodash.merge' );
 
 var extras = {
 
-	'rules' : {
+	rules : {
 		// Strict mode
 		'strict'                    : [ 2, 'global' ],
 
@@ -20,12 +20,12 @@ var extras = {
 		// Stylistic issues
 		'computed-property-spacing' : 1,
 		'key-spacing'               : [ 1, { 'beforeColon' : true, 'afterColon' : true, 'mode' : 'minimum' } ],
+		'keyword-spacing'           : 1,
 		'new-cap'                   : 1,
 		'new-parens'                : 1,
+		'newline-per-chained-call'  : [ 1, { 'ignoreChainWithDepth' : 3 } ],
 		'no-lonely-if'              : 1,
 		'object-curly-spacing'      : 1,
-		'space-after-keywords'      : [ 1, 'always' ],
-		'space-before-keywords'     : [ 1, 'always' ],
 	},
 
 };

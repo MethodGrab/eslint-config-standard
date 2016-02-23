@@ -13,13 +13,17 @@
 
 module.exports = {
 
-	'env' : {
-		'node'     : true,
-		'commonjs' : true,
-		'es6'      : false,
+	env : {
+		node     : true,
+		commonjs : true,
+		es6      : false,
 	},
 
-	'rules' : {
+	parserOptions : {
+		ecmaVersion : 5,
+	},
+
+	rules : {
 
 		// Possible errors
 		// 'comma-dangle'                      : [ 0, 'always-multiline' ],
@@ -54,6 +58,7 @@ module.exports = {
 
 		// Best practices
 		'accessor-pairs'                    : 1,
+		'array-callback-return'             : 2,
 		// 'block-scoped-var'                  : 0,
 		// 'complexity'                        : [ 0, 11 ],
 		'consistent-return'                 : 2,
@@ -68,15 +73,17 @@ module.exports = {
 		'no-case-declarations'              : 2,
 		// 'no-div-regex'                      : 0,
 		'no-else-return'                    : 1,
-		'no-empty-label'                    : 2,
+		'no-empty-function'                 : 1,
 		'no-empty-pattern'                  : 2,
 		'no-eq-null'                        : 1,
 		'no-eval'                           : 2,
 		'no-extend-native'                  : 2,
 		'no-extra-bind'                     : 2,
+		'no-extra-label'                    : 1,
 		'no-fallthrough'                    : 1,
 		'no-floating-decimal'               : 1,
 		// 'no-implicit-coercion'              : 0,
+		'no-implicit-globals'               : 1,
 		'no-implied-eval'                   : 2,
 		'no-invalid-this'                   : 1,
 		'no-iterator'                       : 2,
@@ -98,10 +105,13 @@ module.exports = {
 		'no-redeclare'                      : 2,
 		'no-return-assign'                  : 1,
 		'no-script-url'                     : 2,
+		'no-self-assign'                    : 2,
 		'no-self-compare'                   : 1,
 		'no-sequences'                      : 2,
 		'no-throw-literal'                  : 1,
+		// 'no-unmodified-loop-condition'      : 0,
 		'no-unused-expressions'             : 1,
+		'no-unused-labels'                  : 1,
 		'no-useless-call'                   : 1,
 		'no-useless-concat'                 : 1,
 		// 'no-void'                           : 0,
@@ -114,7 +124,7 @@ module.exports = {
 
 
 		// Strict mode
-		'strict'                            : [ 2, 'global' ],
+		'strict'                            : [ 2, 'safe' ],
 
 
 		// Variables
@@ -131,7 +141,7 @@ module.exports = {
 		'no-use-before-define'              : [ 1, 'nofunc' ],
 
 
-		// Node.js
+		// Node.js & CommonJS
 		'callback-return'                   : [2, [ 'callback', 'cb', 'next', 'done' ] ],
 		'global-require'                    : 1,
 		// 'handle-callback-err'               : 0,
@@ -139,6 +149,7 @@ module.exports = {
 		'no-new-require'                    : 1,
 		'no-path-concat'                    : 1,
 		'no-process-exit'                   : 1,
+		// 'no-restricted-imports'             : 0,
 		// 'no-restricted-modules'             : 0,
 		// 'no-sync'                           : 0,
 
@@ -155,16 +166,19 @@ module.exports = {
 		// 'eol-last'                          : 0,
 		// 'func-names'                        : 0,
 		// 'func-style'                        : [ 0, 'declaration' ],
+		// 'id-blacklist'                      : 0,
 		// 'id-length'                         : 0,
 		// 'id-match'                          : 0,
 		'indent'                            : [ 1, 'tab', { 'SwitchCase' : 1, 'VariableDeclarator' : 1 } ],
 		// 'key-spacing'                       : [ 0, { 'beforeColon' : true, 'afterColon' : true, 'mode' : 'minimum' } ],
+		// 'keyword-spacing'                   : 0,
 		// 'lines-around-comment'              : 0,
 		'linebreak-style'                   : [ 1, 'unix' ],
 		// 'max-nested-callbacks'              : [ 0, 2 ],
 		// 'new-cap'                           : 0,
 		// 'new-parens'                        : 0,
 		// 'newline-after-var'                 : 0,
+		// 'newline-per-chained-call'          : 0,
 		'no-array-constructor'              : 1,
 		// 'no-continue'                       : 0,
 		// 'no-inline-comments'                : 0,
@@ -180,25 +194,25 @@ module.exports = {
 		'no-trailing-spaces'                : 1,
 		// 'no-underscore-dangle'              : 0,
 		'no-unneeded-ternary'               : 1,
+		'no-whitespace-before-property'     : 1,
 		// 'object-curly-spacing'              : 0,
 		// 'one-var'                           : [ 0, 'never' ],
+		// 'one-var-declaration-per-line'      : 0,
 		// 'operator-assignment'               : [ 0, 'always' ],
 		// 'operator-linebreak'                : [ 0, 'after' ],
 		// 'padded-blocks'                     : [ 0, 'always' ],
 		'quote-props'                       : [ 2, 'as-needed', { 'keywords' : false } ],
 		'quotes'                            : [ 2, 'single', 'avoid-escape' ],
 		// 'require-jsdoc'                     : 0,
-		// 'semi-spacing'                      : [ 0, { 'before' : false, 'after' : true } ],
 		'semi'                              : [ 2, 'always' ],
+		// 'semi-spacing'                      : [ 0, { 'before' : false, 'after' : true } ],
+		// 'sort-imports'                      : 0,
 		// 'sort-vars'                         : 0,
-		// 'space-after-keywords'              : [ 0, 'always' ],
-		// 'space-before-keywords'             : [ 0, 'always' ],
 		// 'space-before-blocks'               : [ 0, 'always' ],
 		// 'space-before-function-paren'       : [ 0, { 'anonymous' : 'never', 'named' : 'always' } ],
 		// 'space-in-brackets'                 : [ 0, 'always' ],
 		// 'space-in-parens'                   : [ 0, 'always', { 'exceptions' : [ 'empty' ] } ],
 		// 'space-infix-ops'                   : 0,
-		'space-return-throw-case'           : 1,
 		// 'space-unary-ops'                   : [ 0, { 'words' : true, 'nonwords' : false } ],
 		// 'spaced-comment'                    : [ 0, 'always' ],
 		// 'wrap-regex'                        : 0,
@@ -211,16 +225,6 @@ module.exports = {
 		// 'max-statements'                    : [ 0, 10 ],
 		// 'no-bitwise'                        : 0,
 		// 'no-plusplus'                       : 0,
-
-
-		// Deprecated
-		// 'no-comma-dangle'                   : 0,
-		// 'global-strict'                     : [ 0, 'never' ],
-		// 'no-extra-strict'                   : 0,
-		// 'no-space-before-semi'              : 0,
-		// 'space-after-function-name'         : [ 0, 'never' ],
-		// 'space-before-function-parentheses' : [ 0, 'always' ],
-		// 'generator-star'                    : 0,
 
 	},
 

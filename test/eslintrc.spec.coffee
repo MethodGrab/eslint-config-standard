@@ -79,6 +79,6 @@ describe 'eslint-config-standard', ->
 					assert.equal( errors.length, 4, "Expected 4 errors, found #{errors.length}" )
 
 					assert.equal( errors[0].message, 'Unexpected trailing comma.' )
-					assert.equal( errors[1].message, 'Unquoted reserved word `catch` used as key.' )
+					assert.equal( errors[1].message, 'Unquoted reserved word \'catch\' used as key.' )
 					assert.equal( errors[2].message, '.catch is a syntax error.' )
 					assert.equal( errors[3].message, 'Missing radix parameter.' )
