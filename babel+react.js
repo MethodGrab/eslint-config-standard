@@ -3,7 +3,7 @@
 var merge = require( 'lodash.merge' );
 
 
-var extras = {
+var cfg = {
 
 	parser : 'babel-eslint',
 
@@ -54,4 +54,4 @@ var extras = {
 };
 
 
-module.exports = merge( {}, require( './es2015' ), extras );
+module.exports = merge( {}, require( './es2015' ), cfg );

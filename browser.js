@@ -3,7 +3,7 @@
 var merge = require( 'lodash.merge' );
 
 
-var extras = {
+var cfg = {
 
 	env : {
 		browser  : true,
@@ -17,4 +17,4 @@ var extras = {
 };
 
 
-module.exports = merge( {}, require( './index' ), extras );
+module.exports = cfg;

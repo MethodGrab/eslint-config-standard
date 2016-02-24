@@ -3,7 +3,7 @@
 var merge = require( 'lodash.merge' );
 
 
-var extras = {
+var cfg = {
 
 	rules : {
 		// Strict mode
@@ -31,4 +31,4 @@ var extras = {
 };
 
 
-module.exports = merge( {}, require( './index' ), extras );
+module.exports = cfg;
