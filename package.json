@@ -6,7 +6,7 @@
   "files": [
     "index.js",
     "strict.js",
-    "es2015.js",
+    "esnext.js",
     "babel+react.js",
     "browser.js",
     "legacy.js"

@@ -19,7 +19,7 @@ describe 'eslint-config-standard', ->
 	configs = [
 		'index'
 		'strict'
-		'es2015'
+		'esnext'
 		'babel+react'
 		'browser'
 		'legacy'

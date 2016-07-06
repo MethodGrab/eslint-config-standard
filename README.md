@@ -33,8 +33,8 @@ You can override settings from the shared config by adding them directly into yo
 ## Additional Configs
 
 * `strict` - less relaxed
-* `es2015` - ES2015 (ES6)
-* `babel+react` - `es2015` + Babel parser + React.js rules
+* `esnext` - ES2015 (ES6)+
+* `babel+react` - `esnext` + Babel parser + React.js rules
 * `browser` - browser env
 * `legacy` - `browser` + ES3
 
@@ -43,7 +43,7 @@ Example:
 module.exports = {
 	extends : [
 		'@methodgrab/standard',
-		'@methodgrab/standard/es2015',
+		'@methodgrab/standard/esnext',
 	]
 };
 ```

@@ -54,4 +54,4 @@ var cfg = {
 };
 
 
-module.exports = merge( {}, require( './es2015' ), cfg );
+module.exports = merge( {}, require( './esnext' ), cfg );
