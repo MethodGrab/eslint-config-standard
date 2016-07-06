@@ -152,7 +152,7 @@ module.exports = {
 		// 'no-mixed-requires'                 : [ 0, true ],
 		'no-new-require'                    : 1,
 		'no-path-concat'                    : 1,
-		'no-process-exit'                   : 1,
+		'no-process-exit'                   : 2,
 		// 'no-restricted-imports'             : 0,
 		// 'no-restricted-modules'             : 0,
 		// 'no-sync'                           : 0,
