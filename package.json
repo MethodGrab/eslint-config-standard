@@ -15,8 +15,8 @@
     "node": ">=4.0.0"
   },
   "scripts": {
-    "test": "npm run lint && mocha",
-    "lint": "eslint *.js"
+    "test": "npm run lint && ava",
+    "lint": "eslint *.js test/*.js"
   },
   "repository": {
     "type": "git",
@@ -42,12 +42,11 @@
     "lodash.merge": "^4.3.0"
   },
   "devDependencies": {
+    "ava": "^0.15.2",
     "babel-eslint": "^6.1.0",
-    "chai": "^3.5.0",
-    "coffee-script": "^1.9.2",
     "eslint": "^3.0.1",
     "eslint-plugin-react": "^5.2.2",
-    "mocha": "^2.2.5",
+    "is-plain-obj": "^1.1.0",
     "temp-write": "^2.1.0"
   },
   "peerDependencies": {

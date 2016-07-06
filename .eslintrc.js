@@ -1,12 +1,9 @@
 module.exports = {
-	"env" : {
-		"node"  : true,
-		"mocha" : true
-	},
+	extends : [
+		'./index.js',
+	],
 
-	"rules" : {
-		"quotes"       : [ 2, "single" ],
-		"comma-dangle" : [ 2, "always-multiline" ],
-		"key-spacing"  : [ 2, { "beforeColon" : true, "afterColon" : true, "mode" : "minimum" } ]
-	}
-}
+	rules : {
+		'quote-props' : 0,
+	},
+};
