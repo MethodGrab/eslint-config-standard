@@ -11,6 +11,9 @@
     "browser.js",
     "legacy.js"
   ],
+  "engines": {
+    "node": ">=4.0.0"
+  },
   "scripts": {
     "test": "npm run lint && mocha",
     "lint": "eslint *.js"
