@@ -1,9 +1,6 @@
 'use strict';
 
-var merge = require( 'lodash.merge' );
-
-
-var cfg = {
+module.exports = {
 
 	rules : {
 		// Strict mode
@@ -29,6 +26,3 @@ var cfg = {
 	},
 
 };
-
-
-module.exports = cfg;

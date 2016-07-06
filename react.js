@@ -1,9 +1,10 @@
 'use strict';
 
-var merge = require( 'lodash.merge' );
+var path = require( 'path' );
 
+module.exports = {
 
-var cfg = {
+	extends : path.join( __dirname, 'esnext.js' ),
 
 	parser : 'babel-eslint',
 
@@ -52,6 +53,3 @@ var cfg = {
 	},
 
 };
-
-
-module.exports = merge( {}, require( './esnext' ), cfg );

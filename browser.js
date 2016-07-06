@@ -1,9 +1,6 @@
 'use strict';
 
-var merge = require( 'lodash.merge' );
-
-
-var cfg = {
+module.exports = {
 
 	env : {
 		browser  : true,
@@ -15,6 +12,3 @@ var cfg = {
 	rules : {},
 
 };
-
-
-module.exports = cfg;

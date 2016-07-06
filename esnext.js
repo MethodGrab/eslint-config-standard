@@ -1,9 +1,6 @@
 'use strict';
 
-var merge = require( 'lodash.merge' );
-
-
-var cfg = {
+module.exports = {
 
 	env : {
 		node     : true,
@@ -47,6 +44,3 @@ var cfg = {
 	},
 
 };
-
-
-module.exports = cfg;

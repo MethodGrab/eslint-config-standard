@@ -38,9 +38,6 @@
     "url": "https://github.com/methodgrab/eslint-config-standard/issues"
   },
   "homepage": "https://github.com/methodgrab/eslint-config-standard",
-  "dependencies": {
-    "lodash.merge": "^4.3.0"
-  },
   "devDependencies": {
     "ava": "^0.15.2",
     "babel-eslint": "^6.1.0",

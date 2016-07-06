@@ -1,9 +1,10 @@
 'use strict';
 
-var merge = require( 'lodash.merge' );
+var path = require( 'path' );
 
+module.exports = {
 
-var extras = {
+	extends : path.join( __dirname, 'browser.js' ),
 
 	parserOptions : {
 		ecmaVersion : 3,
@@ -23,6 +24,3 @@ var extras = {
 	},
 
 };
-
-
-module.exports = merge( {}, require( './browser' ), extras );
