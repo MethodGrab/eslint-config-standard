@@ -20,6 +20,7 @@ module.exports = {
 		'keyword-spacing'           : 1,
 		'new-cap'                   : 1,
 		'new-parens'                : 1,
+		'newline-before-return'     : 1,
 		'newline-per-chained-call'  : [ 1, { 'ignoreChainWithDepth' : 3 } ],
 		'no-lonely-if'              : 1,
 		'object-curly-spacing'      : 1,
