@@ -8,7 +8,7 @@ My ESLint [shareable config](http://eslint.org/docs/developer-guide/shareable-co
 npm install --save-dev @methodgrab/eslint-config-standard
 ```
 
-For `babel+react`:
+For `react`:
 ```
 npm install --save-dev @methodgrab/eslint-config-standard babel-eslint eslint-plugin-react
 ```
@@ -34,7 +34,7 @@ You can override settings from the shared config by adding them directly into yo
 
 * `strict` - less relaxed
 * `esnext` - ES2015 (ES6)+
-* `babel+react` - `esnext` + Babel parser + React.js rules
+* `react` - `esnext` + React.js rules
 * `browser` - browser env
 * `legacy` - `browser` + ES3
 

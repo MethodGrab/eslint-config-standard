@@ -7,7 +7,7 @@
     "index.js",
     "strict.js",
     "esnext.js",
-    "babel+react.js",
+    "react.js",
     "browser.js",
     "legacy.js"
   ],

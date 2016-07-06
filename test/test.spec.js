@@ -50,8 +50,8 @@ test( 'esnext', t => {
 });
 
 
-test( 'babel+react', t => {
-	const conf = require( '../babel+react' );
+test( 'react', t => {
+	const conf = require( '../react' );
 
 	t.true( isPlainObj( conf ) );
 	t.true( isPlainObj( conf.rules ) );
