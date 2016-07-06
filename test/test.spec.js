@@ -20,7 +20,7 @@ test( 'main', t => {
 	t.true( isPlainObj( conf ) );
 	t.true( isPlainObj( conf.rules ) );
 
-	const errors = runEslint( '\'use strict\'; var foo = "bar";\n', conf );
+	const errors = runEslint( `'use strict'; var foo = "bar";\n`, conf );
 	t.is( errors[0].ruleId, 'quotes' );
 	t.is( errors.length, 1, `The number of errors should match an expected value. Errors found: ${errors.map( e => e.ruleId ).join( ', ' )}` );
 });
@@ -32,7 +32,7 @@ test( 'strict', t => {
 	t.true( isPlainObj( conf ) );
 	t.true( isPlainObj( conf.rules ) );
 
-	const errors = runEslint( '\'use strict\'; var foo = 100; var bar = foo * 0.25;\n', conf );
+	const errors = runEslint( `'use strict'; var foo = 100; var bar = foo * 0.25;\n`, conf );
 	t.is( errors[0].ruleId, 'no-magic-numbers' );
 	t.is( errors.length, 1, `The number of errors should match an expected value. Errors found: ${errors.map( e => e.ruleId ).join( ', ' )}` );
 });
@@ -56,7 +56,7 @@ test( 'react', t => {
 	t.true( isPlainObj( conf ) );
 	t.true( isPlainObj( conf.rules ) );
 
-	const errors = runEslint( 'import React from \'React\'; const Hello = () => {}; <Hello foo="bar" foo="baz" />;', conf );
+	const errors = runEslint( `import React from 'React'; const Hello = () => {}; <Hello foo="bar" foo="baz" />;\n`, conf );
 	t.is( errors[0].ruleId, 'react/jsx-no-duplicate-props' );
 	t.is( errors.length, 1, `The number of errors should match an expected value. Errors found: ${errors.map( e => e.ruleId ).join( ', ' )}` );
 });
@@ -67,7 +67,7 @@ test( 'browser', t => {
 
 	t.true( isPlainObj( conf ) );
 
-	const errors = runEslint( '\'use strict\'; window.foo = \'bar\';\n', conf );
+	const errors = runEslint( `'use strict'; window.foo = 'bar';\n`, conf );
 	t.is( errors.length, 0, `The number of errors should match an expected value. Errors found: ${errors.map( e => e.ruleId ).join( ', ' )}` );
 });
 
