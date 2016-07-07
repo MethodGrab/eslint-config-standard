@@ -39,7 +39,10 @@ module.exports = {
 		'no-empty'                          : 1,
 		'no-ex-assign'                      : 2,
 		'no-extra-boolean-cast'             : 2,
-		'no-extra-parens'                   : [ 2, 'all', { conditionalAssign : false, returnAssign : false, nestedBinaryExpressions : false } ],
+
+		// Disabled due to conflict with `no-confusing-arrow`: https://github.com/eslint/eslint/issues/6196
+		// 'no-extra-parens'                   : [ 2, 'all', { conditionalAssign : false, returnAssign : false, nestedBinaryExpressions : false } ],
+
 		'no-extra-semi'                     : 2,
 		'no-func-assign'                    : 2,
 		'no-inner-declarations'             : [ 2, 'functions' ],
