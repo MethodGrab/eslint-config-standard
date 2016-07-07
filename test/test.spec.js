@@ -50,6 +50,21 @@ test( 'esnext', t => {
 });
 
 
+test( 'esnext w/ es2016', t => {
+	const conf = require( '../esnext' );
+
+	t.true( isPlainObj( conf ) );
+	t.true( isPlainObj( conf.rules ) );
+
+	conf.parser = 'babel-eslint';
+
+	const errors = runEslint( `
+		const foo = async ( bar, ...baz ) => { await Promise.resolve({ bar }) };
+	`, conf );
+
+	t.is( errors.length, 0, `The number of errors should match an expected value. Errors found: ${errors.map( e => e.ruleId ).join( ', ' )}` );
+});
+
 test( 'react', t => {
 	const conf = require( '../react' );
 

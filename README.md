@@ -8,6 +8,11 @@ My ESLint [shareable config](http://eslint.org/docs/developer-guide/shareable-co
 npm install --save-dev @methodgrab/eslint-config-standard
 ```
 
+For `esnext` with [certain non-finalised features](https://github.com/babel/babel-eslint#readme) `babel-eslint` will be needed as well:
+```
+npm install --save-dev @methodgrab/eslint-config-standard babel-eslint
+```
+
 For `react`:
 ```
 npm install --save-dev @methodgrab/eslint-config-standard babel-eslint eslint-plugin-react
@@ -19,11 +24,26 @@ Extend it in your `.eslintrc.js`
 ```js
 module.exports = {
 	extends : [
-		'@methodgrab/standard'
+		'@methodgrab/standard',
 	],
-	rules   : {
+
+	rules : {
 		// override shared config rules
 	},
+};
+```
+
+The default ESLint parser has good support for ES2015+ built in. The `babel-eslint` parser is only required if your code includes [certain non-finalised features](https://github.com/babel/babel-eslint#readme).
+```js
+module.exports = {
+	extends : [
+		'@methodgrab/standard',
+		'@methodgrab/standard/esnext',
+	],
+
+	parser : 'babel-eslint',
+
+	rules : {},
 };
 ```
 
