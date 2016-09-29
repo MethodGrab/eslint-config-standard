@@ -219,7 +219,7 @@ module.exports = {
 		// 'operator-linebreak'                : [ 0, 'after' ],
 		// 'padded-blocks'                     : [ 0, 'always' ],
 		'quote-props'                       : [ 2, 'as-needed', { keywords : false } ],
-		'quotes'                            : [ 2, 'single', { avoidEscape : true, allowTemplateLiterals : false } ],
+		'quotes'                            : [ 2, 'single', { avoidEscape : true, allowTemplateLiterals : true } ],
 		// 'require-jsdoc'                     : 0,
 		'semi'                              : [ 2, 'always' ],
 		// 'semi-spacing'                      : [ 0, { 'before' : false, 'after' : true } ],
