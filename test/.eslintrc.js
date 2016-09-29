@@ -1,10 +1,11 @@
 module.exports = {
 	extends : [
 		'../index.js',
-		'../esnext.js',
+		'../ava.js',
 	],
 
 	rules : {
-		'global-require' : 0,
+		'global-require' : 'off',
+		'ava/max-asserts': 'off',
 	},
 };

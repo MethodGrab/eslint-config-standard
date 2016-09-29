@@ -21,8 +21,9 @@ test( 'main', t => {
 	t.true( isPlainObj( conf.rules ) );
 
 	const errors = runEslint( `'use strict';\n\nvar foo = "bar";\n`, conf );
-	t.is( errors[0].ruleId, 'quotes' );
-	t.is( errors.length, 1, `The number of errors should match an expected value. Errors found: ${errors.map( e => e.ruleId ).join( ', ' )}` );
+
+	t.true( errors[0].ruleId === 'quotes' );
+	t.true( errors.length === 1, `The number of errors should match an expected value. Errors found: ${errors.map( e => e.ruleId ).join( ', ' )}` );
 });
 
 
@@ -33,8 +34,9 @@ test( 'strict', t => {
 	t.true( isPlainObj( conf.rules ) );
 
 	const errors = runEslint( `'use strict'; var foo = 100; var bar = foo * 0.25;\n`, conf );
-	t.is( errors[0].ruleId, 'no-magic-numbers' );
-	t.is( errors.length, 1, `The number of errors should match an expected value. Errors found: ${errors.map( e => e.ruleId ).join( ', ' )}` );
+
+	t.true( errors[0].ruleId === 'no-magic-numbers' );
+	t.true( errors.length === 1, `The number of errors should match an expected value. Errors found: ${errors.map( e => e.ruleId ).join( ', ' )}` );
 });
 
 
@@ -45,8 +47,9 @@ test( 'esnext', t => {
 	t.true( isPlainObj( conf.rules ) );
 
 	const errors = runEslint( 'var foo = true;\n', conf );
-	t.is( errors[0].ruleId, 'no-var' );
-	t.is( errors.length, 1, `The number of errors should match an expected value. Errors found: ${errors.map( e => e.ruleId ).join( ', ' )}` );
+
+	t.true( errors[0].ruleId === 'no-var' );
+	t.true( errors.length === 1, `The number of errors should match an expected value. Errors found: ${errors.map( e => e.ruleId ).join( ', ' )}` );
 });
 
 
@@ -60,7 +63,7 @@ test( 'esnext w/ es2016', t => {
 		const foo = async ( bar, ...baz ) => { await Promise.resolve({ bar }) };
 	`, conf );
 
-	t.is( errors.length, 0, `The number of errors should match an expected value. Errors found: ${errors.map( e => e.ruleId ).join( ', ' )}` );
+	t.true( errors.length === 0, `The number of errors should match an expected value. Errors found: ${errors.map( e => e.ruleId ).join( ', ' )}` );
 });
 
 test( 'react', t => {
@@ -70,8 +73,9 @@ test( 'react', t => {
 	t.true( isPlainObj( conf.rules ) );
 
 	const errors = runEslint( `import React from 'React'; const Hello = () => {}; <Hello foo="bar" foo="baz" />;\n`, conf );
-	t.is( errors[0].ruleId, 'react/jsx-no-duplicate-props' );
-	t.is( errors.length, 1, `The number of errors should match an expected value. Errors found: ${errors.map( e => e.ruleId ).join( ', ' )}` );
+
+	t.true( errors[0].ruleId === 'react/jsx-no-duplicate-props' );
+	t.true( errors.length === 1, `The number of errors should match an expected value. Errors found: ${errors.map( e => e.ruleId ).join( ', ' )}` );
 });
 
 
@@ -81,7 +85,8 @@ test( 'browser', t => {
 	t.true( isPlainObj( conf ) );
 
 	const errors = runEslint( `'use strict'; window.foo = 'bar';\n`, conf );
-	t.is( errors.length, 0, `The number of errors should match an expected value. Errors found: ${errors.map( e => e.ruleId ).join( ', ' )}` );
+
+	t.true( errors.length === 0, `The number of errors should match an expected value. Errors found: ${errors.map( e => e.ruleId ).join( ', ' )}` );
 });
 
 
@@ -100,12 +105,12 @@ test( 'legacy', t => {
 		var int = parseInt( '10' );
 	`, conf );
 
-	t.is( errors[0].ruleId, 'comma-dangle' );
-	t.is( errors[1].ruleId, 'quote-props' );
-	t.is( errors[2].ruleId, 'dot-notation' );
-	t.is( errors[3].ruleId, 'radix' );
+	t.true( errors[0].ruleId === 'comma-dangle' );
+	t.true( errors[1].ruleId === 'quote-props' );
+	t.true( errors[2].ruleId === 'dot-notation' );
+	t.true( errors[3].ruleId === 'radix' );
 
-	t.is( errors.length, 4, `The number of errors should match an expected value. Errors found: ${errors.map( e => e.ruleId ).join( ', ' )}` );
+	t.true( errors.length === 4, `The number of errors should match an expected value. Errors found: ${errors.map( e => e.ruleId ).join( ', ' )}` );
 });
 
 
@@ -123,5 +128,5 @@ test( 'ava', t => {
 		});
 	`, conf );
 
-	t.is( errors.length, 0, `The number of errors should match an expected value. Errors found: ${errors.map( e => e.ruleId ).join( ', ' )}` );
+	t.true( errors.length === 0, `The number of errors should match an expected value. Errors found: ${errors.map( e => e.ruleId ).join( ', ' )}` );
 });
