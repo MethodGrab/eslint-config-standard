@@ -18,6 +18,11 @@ For `react`:
 npm install --save-dev @methodgrab/eslint-config-standard babel-eslint eslint-plugin-react
 ```
 
+For `ava`:
+```
+npm install --save-dev @methodgrab/eslint-config-standard eslint-plugin-ava
+```
+
 
 ## Usage
 Extend it in your `.eslintrc.js`
@@ -55,6 +60,7 @@ You can override settings from the shared config by adding them directly into yo
 * `strict` - less relaxed
 * `esnext` - ES2015 (ES6)+
 * `react` - `esnext` + React.js rules
+* `ava` - `esnext` + AVA rules
 * `browser` - browser env
 * `legacy` - `browser` + ES3
 

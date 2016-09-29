@@ -8,9 +8,9 @@
     "strict.js",
     "esnext.js",
     "react.js",
+    "ava.js",
     "browser.js",
-    "legacy.js",
-    "ava.js"
+    "legacy.js"
   ],
   "engines": {
     "node": ">=4.0.0"

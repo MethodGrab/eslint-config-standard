@@ -79,6 +79,24 @@ test( 'react', t => {
 });
 
 
+test( 'ava', t => {
+	const conf = require( '../ava' );
+
+	t.true( isPlainObj( conf ) );
+	t.true( isPlainObj( conf.rules ) );
+
+	const errors = runEslint( `
+		import test from 'ava';
+
+		test( 'foo', t => {
+			t.true( true === true );
+		});
+	`, conf );
+
+	t.true( errors.length === 0, `The number of errors should match an expected value. Errors found: ${errors.map( e => e.ruleId ).join( ', ' )}` );
+});
+
+
 test( 'browser', t => {
 	const conf = require( '../browser' );
 
@@ -111,22 +129,4 @@ test( 'legacy', t => {
 	t.true( errors[3].ruleId === 'radix' );
 
 	t.true( errors.length === 4, `The number of errors should match an expected value. Errors found: ${errors.map( e => e.ruleId ).join( ', ' )}` );
-});
-
-
-test( 'ava', t => {
-	const conf = require( '../ava' );
-
-	t.true( isPlainObj( conf ) );
-	t.true( isPlainObj( conf.rules ) );
-
-	const errors = runEslint( `
-		import test from 'ava';
-
-		test( 'foo', t => {
-			t.true( true === true );
-		});
-	`, conf );
-
-	t.true( errors.length === 0, `The number of errors should match an expected value. Errors found: ${errors.map( e => e.ruleId ).join( ', ' )}` );
 });
