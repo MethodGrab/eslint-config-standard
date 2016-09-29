@@ -26,7 +26,6 @@ module.exports = {
 	rules : {
 
 		// Possible errors
-		// 'comma-dangle'                      : [ 0, 'always-multiline' ],
 		'no-cond-assign'                    : 2,
 		// 'no-console'                        : 0,
 		'no-constant-condition'             : 2,
@@ -169,8 +168,9 @@ module.exports = {
 		'block-spacing'                     : [ 1, 'always' ],
 		// 'brace-style'                       : [ 0, '1tbs', { 'allowSingleLine' : true } ],
 		'camelcase'                         : 1,
+		'comma-dangle'                      : [ 1, 'always-multiline' ],
 		// 'comma-spacing'                     : 0,
-		// 'comma-style'                       : [ 0, 'last' ],
+		'comma-style'                       : [ 1, 'last' ],
 		// 'computed-property-spacing'         : 0,
 		// 'consistent-this'                   : [ 0, 'self' ],
 		// 'eol-last'                          : 0,
