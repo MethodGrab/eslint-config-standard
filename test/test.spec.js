@@ -20,7 +20,7 @@ test( 'main', t => {
 	t.true( isPlainObj( conf ) );
 	t.true( isPlainObj( conf.rules ) );
 
-	const errors = runEslint( `'use strict'; var foo = "bar";\n`, conf );
+	const errors = runEslint( `'use strict';\n\nvar foo = "bar";\n`, conf );
 	t.is( errors[0].ruleId, 'quotes' );
 	t.is( errors.length, 1, `The number of errors should match an expected value. Errors found: ${errors.map( e => e.ruleId ).join( ', ' )}` );
 });
@@ -55,8 +55,6 @@ test( 'esnext w/ es2016', t => {
 
 	t.true( isPlainObj( conf ) );
 	t.true( isPlainObj( conf.rules ) );
-
-	conf.parser = 'babel-eslint';
 
 	const errors = runEslint( `
 		const foo = async ( bar, ...baz ) => { await Promise.resolve({ bar }) };

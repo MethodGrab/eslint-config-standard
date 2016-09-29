@@ -16,7 +16,24 @@ module.exports = {
 
 		// Stylistic issues
 		'computed-property-spacing' : 1,
-		'key-spacing'               : [ 1, { 'beforeColon' : true, 'afterColon' : true, 'mode' : 'minimum' } ],
+		'key-spacing'               : [ 1, {
+			align: {
+				beforeColon : true,
+				afterColon  : true,
+				mode        : 'minimum',
+				on          : 'colon',
+			},
+			singleLine: {
+				beforeColon : false,
+				afterColon  : true,
+				mode        : 'minimum',
+			},
+			multiLine: {
+				beforeColon : false,
+				afterColon  : true,
+				mode        : 'minimum',
+			},
+		}],
 		'keyword-spacing'           : 1,
 		'new-cap'                   : 1,
 		'new-parens'                : 1,
