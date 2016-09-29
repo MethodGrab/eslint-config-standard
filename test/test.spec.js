@@ -97,8 +97,8 @@ test( 'legacy', t => {
 		var foo = { bar: 123, };
 		var baz = { catch: function(){ return true; } };
 		baz.catch();
-		var int = parseInt( '10' );`,
-	conf );
+		var int = parseInt( '10' );
+	`, conf );
 
 	t.is( errors[0].ruleId, 'comma-dangle' );
 	t.is( errors[1].ruleId, 'quote-props' );
@@ -106,4 +106,22 @@ test( 'legacy', t => {
 	t.is( errors[3].ruleId, 'radix' );
 
 	t.is( errors.length, 4, `The number of errors should match an expected value. Errors found: ${errors.map( e => e.ruleId ).join( ', ' )}` );
+});
+
+
+test( 'ava', t => {
+	const conf = require( '../ava' );
+
+	t.true( isPlainObj( conf ) );
+	t.true( isPlainObj( conf.rules ) );
+
+	const errors = runEslint( `
+		import test from 'ava';
+
+		test( 'foo', t => {
+			t.true( true === true );
+		});
+	`, conf );
+
+	t.is( errors.length, 0, `The number of errors should match an expected value. Errors found: ${errors.map( e => e.ruleId ).join( ', ' )}` );
 });
