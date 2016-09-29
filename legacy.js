@@ -12,15 +12,15 @@ module.exports = {
 
 	rules : {
 		// Possible errors
-		'comma-dangle'          : [ 2, 'never' ],
-		'quote-props'           : [ 2, 'as-needed', { 'keywords' : true } ],
+		'comma-dangle'          : [ 'error', 'never' ],
+		'quote-props'           : [ 'error', 'as-needed', { 'keywords' : true } ],
 
 		// Best practices
-		'dot-notation'          : [ 2, { 'allowKeywords' : false } ],
-		'radix'                 : 2,
+		'dot-notation'          : [ 'error', { 'allowKeywords' : false } ],
+		'radix'                 : 'error',
 
 		// Variables
-		'no-catch-shadow'       : 2,
+		'no-catch-shadow'       : 'error',
 	},
 
 };

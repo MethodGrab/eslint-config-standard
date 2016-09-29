@@ -4,19 +4,19 @@ module.exports = {
 
 	rules : {
 		// Strict mode
-		'strict'                    : [ 2, 'global' ],
+		'strict'                    : [ 'error', 'global' ],
 
 		// Best practices
-		'no-magic-numbers'          : 1,
+		'no-magic-numbers'          : 'warn',
 
 		// Node.js
-		'handle-callback-err'       : [ 2, '^(err|error)$' ],
-		'no-mixed-requires'         : [ 1, true ],
-		'no-sync'                   : 1,
+		'handle-callback-err'       : [ 'error', '^(err|error)$' ],
+		'no-mixed-requires'         : [ 'warn', true ],
+		'no-sync'                   : 'warn',
 
 		// Stylistic issues
-		'computed-property-spacing' : 1,
-		'key-spacing'               : [ 1, {
+		'computed-property-spacing' : 'warn',
+		'key-spacing'               : [ 'warn', {
 			align: {
 				beforeColon : true,
 				afterColon  : true,
@@ -34,13 +34,13 @@ module.exports = {
 				mode        : 'minimum',
 			},
 		}],
-		'keyword-spacing'           : 1,
-		'new-cap'                   : 1,
-		'new-parens'                : 1,
-		'newline-before-return'     : 1,
-		'newline-per-chained-call'  : [ 1, { 'ignoreChainWithDepth' : 3 } ],
-		'no-lonely-if'              : 1,
-		'object-curly-spacing'      : 1,
+		'keyword-spacing'           : 'warn',
+		'new-cap'                   : 'warn',
+		'new-parens'                : 'warn',
+		'newline-before-return'     : 'warn',
+		'newline-per-chained-call'  : [ 'warn', { 'ignoreChainWithDepth' : 3 } ],
+		'no-lonely-if'              : 'warn',
+		'object-curly-spacing'      : 'warn',
 	},
 
 };
