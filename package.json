@@ -1,6 +1,6 @@
 {
   "name": "@methodgrab/eslint-config-standard",
-  "version": "0.9.0",
+  "version": "0.10.0",
   "description": "ESLint config",
   "main": "index.js",
   "files": [
