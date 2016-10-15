@@ -114,7 +114,7 @@ module.exports = {
 		'no-sequences'                      : 'error',
 		'no-throw-literal'                  : 'warn',
 		// 'no-unmodified-loop-condition'      : 'off',
-		'no-unused-expressions'             : 'warn',
+		'no-unused-expressions'             : [ 'warn', { allowShortCircuit: true, allowTernary: true } ],
 		'no-unused-labels'                  : 'warn',
 		'no-useless-call'                   : 'warn',
 		'no-useless-concat'                 : 'warn',
