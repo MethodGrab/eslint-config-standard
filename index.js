@@ -218,7 +218,11 @@ module.exports = {
 		// 'no-inline-comments'                : 'off',
 		// 'no-lonely-if'                      : 'off',
 		'no-mixed-operators'                : 'warn',
-		'no-mixed-spaces-and-tabs'          : [ 2, 'smart-tabs' ],
+
+		// Smart tabs disabled
+		// https://github.com/eslint/eslint/issues/7323
+		'no-mixed-spaces-and-tabs'          : [ 'error' ],
+
 		// 'no-multiple-empty-lines'           : [ 'off', { 'max' : 2 } ],
 		'no-negated-condition'              : 'warn',
 		// 'no-nested-ternary'                 : 'off',
