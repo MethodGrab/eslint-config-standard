@@ -116,7 +116,7 @@ test( 'legacy', t => {
 
 	const errors = runEslint( `
 		'use strict';
-		window.foo = \'bar\';
+		window.foo = 'bar';
 		var foo = { bar: 123, };
 		var baz = { catch: function(){ return true; } };
 		baz.catch();
