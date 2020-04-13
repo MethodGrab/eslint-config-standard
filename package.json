@@ -40,13 +40,13 @@
   },
   "homepage": "https://github.com/methodgrab/eslint-config-standard",
   "devDependencies": {
-    "ava": "^0.16.0",
-    "babel-eslint": "^7.0.0",
+    "ava": "^3.7.0",
+    "babel-eslint": "^10.1.0",
     "eslint": "^6.8.0",
-    "eslint-plugin-ava": "^3.1.0",
-    "eslint-plugin-react": "^5.2.2",
-    "is-plain-obj": "^1.1.0",
-    "temp-write": "^2.1.0"
+    "eslint-plugin-ava": "^10.2.0",
+    "eslint-plugin-react": "^7.19.0",
+    "is-plain-obj": "^2.1.0",
+    "temp-write": "^4.0.0"
   },
   "peerDependencies": {
     "eslint": ">=3.6.1"
