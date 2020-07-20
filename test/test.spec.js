@@ -1,91 +1,95 @@
+import path       from 'path';
 import test       from 'ava';
 import isPlainObj from 'is-plain-obj';
-import eslint     from 'eslint';
-import tempWrite  from 'temp-write';
+import { ESLint } from 'eslint';
 
 
-const runEslint = ( str, conf ) => {
-	const linter = new eslint.CLIEngine({
-		useEslintrc : false,
-		configFile  : tempWrite.sync( JSON.stringify( conf ) ),
+const runEslint = async ( str, conf ) => {
+	const eslint = new ESLint({
+		cwd: path.resolve( __dirname, '../' ),
+		resolvePluginsRelativeTo: path.resolve( __dirname, '../' ),
+		useEslintrc: false,
+		overrideConfig: conf,
 	});
 
-	return linter.executeOnText( str ).results[0].messages;
+	let result = await eslint.lintText( str );
+	result = result[0].messages;
+	return result;
 };
 
 
-test( 'main', t => {
+test( 'main', async t => {
 	const conf = require( '../' );
 
 	t.true( isPlainObj( conf ) );
 	t.true( isPlainObj( conf.rules ) );
 
-	const errors = runEslint( `'use strict';\n\nvar foo = "bar";\n`, conf );
+	const errors = await runEslint( `'use strict';\n\nvar foo = "bar";\n`, conf );
 
 	t.true( errors[0].ruleId === 'quotes' );
 	t.true( errors.length === 1, `The number of errors should match an expected value. Errors found: ${errors.map( e => e.ruleId ).join( ', ' )}` );
 });
 
 
-test( 'strict', t => {
+test( 'strict', async t => {
 	const conf = require( '../strict' );
 
 	t.true( isPlainObj( conf ) );
 	t.true( isPlainObj( conf.rules ) );
 
-	const errors = runEslint( `'use strict'; var foo = 100; var bar = foo * 0.25;\n`, conf );
+	const errors = await runEslint( `'use strict'; var foo = 100; var bar = foo * 0.25;\n`, conf );
 
 	t.true( errors[0].ruleId === 'no-magic-numbers' );
 	t.true( errors.length === 1, `The number of errors should match an expected value. Errors found: ${errors.map( e => e.ruleId ).join( ', ' )}` );
 });
 
 
-test( 'esnext', t => {
+test( 'esnext', async t => {
 	const conf = require( '../esnext' );
 
 	t.true( isPlainObj( conf ) );
 	t.true( isPlainObj( conf.rules ) );
 
-	const errors = runEslint( 'var foo = true;\n', conf );
+	const errors = await runEslint( 'var foo = true;\n', conf );
 
 	t.true( errors[0].ruleId === 'no-var' );
 	t.true( errors.length === 1, `The number of errors should match an expected value. Errors found: ${errors.map( e => e.ruleId ).join( ', ' )}` );
 });
 
 
-test( 'esnext w/ es2016', t => {
+test( 'esnext w/ es2016', async t => {
 	const conf = require( '../esnext' );
 
 	t.true( isPlainObj( conf ) );
 	t.true( isPlainObj( conf.rules ) );
 
-	const errors = runEslint( `
+	const errors = await runEslint( `
 		const foo = async ( bar, ...baz ) => { await Promise.resolve({ bar }) };
 	`, conf );
 
 	t.true( errors.length === 0, `The number of errors should match an expected value. Errors found: ${errors.map( e => e.ruleId ).join( ', ' )}` );
 });
 
-test( 'react', t => {
+test( 'react', async t => {
 	const conf = require( '../react' );
 
 	t.true( isPlainObj( conf ) );
 	t.true( isPlainObj( conf.rules ) );
 
-	const errors = runEslint( `import React from 'React'; const Hello = () => {}; <Hello foo="bar" foo="baz" />;\n`, conf );
+	const errors = await runEslint( `import React from 'React'; const Hello = () => {}; <Hello foo="bar" foo="baz" />;\n`, conf );
 
 	t.true( errors[0].ruleId === 'react/jsx-no-duplicate-props' );
 	t.true( errors.length === 1, `The number of errors should match an expected value. Errors found: ${errors.map( e => e.ruleId ).join( ', ' )}` );
 });
 
 
-test( 'ava', t => {
+test( 'ava', async t => {
 	const conf = require( '../ava' );
 
 	t.true( isPlainObj( conf ) );
 	t.true( isPlainObj( conf.rules ) );
 
-	const errors = runEslint( `
+	const errors = await runEslint( `
 		import test from 'ava';
 
 		test( 'foo', t => {
@@ -97,24 +101,24 @@ test( 'ava', t => {
 });
 
 
-test( 'browser', t => {
+test( 'browser', async t => {
 	const conf = require( '../browser' );
 
 	t.true( isPlainObj( conf ) );
 
-	const errors = runEslint( `'use strict'; window.foo = 'bar';\n`, conf );
+	const errors = await runEslint( `'use strict'; window.foo = 'bar';\n`, conf );
 
 	t.true( errors.length === 0, `The number of errors should match an expected value. Errors found: ${errors.map( e => e.ruleId ).join( ', ' )}` );
 });
 
 
-test( 'legacy', t => {
+test( 'legacy', async t => {
 	const conf = require( '../legacy' );
 
 	t.true( isPlainObj( conf ) );
 	t.true( isPlainObj( conf.rules ) );
 
-	const errors = runEslint( `
+	const errors = await runEslint( `
 		'use strict';
 		window.foo = 'bar';
 		var foo = { bar: 123, };
