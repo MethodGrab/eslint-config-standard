@@ -118,6 +118,14 @@ test( 'legacy', async t => {
 	t.true( isPlainObj( conf ) );
 	t.true( isPlainObj( conf.rules ) );
 
+
+	/*
+	comma-dangle (e.g. `var foo = { bar: 123, }`) is now an ESLint parse error with `parserOptions: { ecmaVersion: 3 }` and ESLint v7.5.0 despite the docs saying its valid:
+	> Trailing commas in object literals are valid according to the ECMAScript 5 (and ECMAScript 3!) spec. However, IE8 (when not in IE8 document mode) and below will throw an error when it encounters trailing commas in JavaScript.
+	> -- https://eslint.org/docs/rules/comma-dangle
+
+	TODO: re-enable the `comma-dangle` assertion below when this gets fixed.
+
 	const errors = await runEslint( `
 		'use strict';
 		window.foo = 'bar';
@@ -133,4 +141,20 @@ test( 'legacy', async t => {
 	t.true( errors[3].ruleId === 'radix' );
 
 	t.true( errors.length === 4, `The number of errors should match an expected value. Errors found: ${errors.map( e => e.ruleId ).join( ', ' )}` );
+	*/
+
+
+	const errors = await runEslint( `
+		'use strict';
+		window.foo = 'bar';
+		var baz = { catch: function(){ return true; } };
+		baz.catch();
+		var int = parseInt( '10' );
+	`, conf );
+
+	t.true( errors[0].ruleId === 'quote-props' );
+	t.true( errors[1].ruleId === 'dot-notation' );
+	t.true( errors[2].ruleId === 'radix' );
+
+	t.true( errors.length === 3, `The number of errors should match an expected value. Errors found: ${errors.map( e => e.ruleId ).join( ', ' )}` );
 });
