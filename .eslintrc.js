@@ -4,6 +4,7 @@ module.exports = {
 	],
 
 	rules : {
-		'quote-props' : 0,
+		'strict': 'off',
+		'quote-props': 'off',
 	},
 };
