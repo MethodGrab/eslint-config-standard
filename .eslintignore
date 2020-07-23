@@ -1,0 +1,6 @@
+# The AVA config file requires ES module-style `export default` syntax but
+# it's not possible to specify `parserOptions: { sourceType: 'module' }` inline
+# in a file so the entire file needs to be excluded from linting.
+# https://github.com/eslint/eslint/issues/3698
+# https://github.com/eslint/eslint/issues/5651
+ava.config.js

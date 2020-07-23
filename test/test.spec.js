@@ -21,102 +21,102 @@ const runEslint = async ( str, conf ) => {
 test( 'main', async t => {
 	const conf = require( '../' );
 
-	t.true( isPlainObj( conf ) );
-	t.true( isPlainObj( conf.rules ) );
+	t.assert( isPlainObj( conf ) );
+	t.assert( isPlainObj( conf.rules ) );
 
 	const errors = await runEslint( `'use strict';\n\nvar foo = "bar";\n`, conf );
 
-	t.true( errors[0].ruleId === 'quotes' );
-	t.true( errors.length === 1, `The number of errors should match an expected value. Errors found: ${errors.map( e => e.ruleId ).join( ', ' )}` );
+	t.assert( errors[0].ruleId === 'quotes' );
+	t.assert( errors.length === 1, `The number of errors should match an expected value. Errors found: ${errors.map( e => e.ruleId ).join( ', ' )}` );
 });
 
 
 test( 'strict', async t => {
 	const conf = require( '../strict' );
 
-	t.true( isPlainObj( conf ) );
-	t.true( isPlainObj( conf.rules ) );
+	t.assert( isPlainObj( conf ) );
+	t.assert( isPlainObj( conf.rules ) );
 
 	const errors = await runEslint( `'use strict'; var foo = 100; var bar = foo * 0.25;\n`, conf );
 
-	t.true( errors[0].ruleId === 'no-magic-numbers' );
-	t.true( errors.length === 1, `The number of errors should match an expected value. Errors found: ${errors.map( e => e.ruleId ).join( ', ' )}` );
+	t.assert( errors[0].ruleId === 'no-magic-numbers' );
+	t.assert( errors.length === 1, `The number of errors should match an expected value. Errors found: ${errors.map( e => e.ruleId ).join( ', ' )}` );
 });
 
 
 test( 'esnext', async t => {
 	const conf = require( '../esnext' );
 
-	t.true( isPlainObj( conf ) );
-	t.true( isPlainObj( conf.rules ) );
+	t.assert( isPlainObj( conf ) );
+	t.assert( isPlainObj( conf.rules ) );
 
 	const errors = await runEslint( 'var foo = true;\n', conf );
 
-	t.true( errors[0].ruleId === 'no-var' );
-	t.true( errors.length === 1, `The number of errors should match an expected value. Errors found: ${errors.map( e => e.ruleId ).join( ', ' )}` );
+	t.assert( errors[0].ruleId === 'no-var' );
+	t.assert( errors.length === 1, `The number of errors should match an expected value. Errors found: ${errors.map( e => e.ruleId ).join( ', ' )}` );
 });
 
 
 test( 'esnext w/ es2016', async t => {
 	const conf = require( '../esnext' );
 
-	t.true( isPlainObj( conf ) );
-	t.true( isPlainObj( conf.rules ) );
+	t.assert( isPlainObj( conf ) );
+	t.assert( isPlainObj( conf.rules ) );
 
 	const errors = await runEslint( `
 		const foo = async ( bar, ...baz ) => { await Promise.resolve({ bar }) };
 	`, conf );
 
-	t.true( errors.length === 0, `The number of errors should match an expected value. Errors found: ${errors.map( e => e.ruleId ).join( ', ' )}` );
+	t.assert( errors.length === 0, `The number of errors should match an expected value. Errors found: ${errors.map( e => e.ruleId ).join( ', ' )}` );
 });
 
 test( 'react', async t => {
 	const conf = require( '../react' );
 
-	t.true( isPlainObj( conf ) );
-	t.true( isPlainObj( conf.rules ) );
+	t.assert( isPlainObj( conf ) );
+	t.assert( isPlainObj( conf.rules ) );
 
 	const errors = await runEslint( `import React from 'React'; const Hello = () => {}; <Hello foo="bar" foo="baz" />;\n`, conf );
 
-	t.true( errors[0].ruleId === 'react/jsx-no-duplicate-props' );
-	t.true( errors.length === 1, `The number of errors should match an expected value. Errors found: ${errors.map( e => e.ruleId ).join( ', ' )}` );
+	t.assert( errors[0].ruleId === 'react/jsx-no-duplicate-props' );
+	t.assert( errors.length === 1, `The number of errors should match an expected value. Errors found: ${errors.map( e => e.ruleId ).join( ', ' )}` );
 });
 
 
 test( 'ava', async t => {
 	const conf = require( '../ava' );
 
-	t.true( isPlainObj( conf ) );
-	t.true( isPlainObj( conf.rules ) );
+	t.assert( isPlainObj( conf ) );
+	t.assert( isPlainObj( conf.rules ) );
 
 	const errors = await runEslint( `
 		import test from 'ava';
 
 		test( 'foo', t => {
-			t.true( true === true );
+			t.assert( true === true );
 		});
 	`, conf );
 
-	t.true( errors.length === 0, `The number of errors should match an expected value. Errors found: ${errors.map( e => e.ruleId ).join( ', ' )}` );
+	t.assert( errors.length === 0, `The number of errors should match an expected value. Errors found: ${errors.map( e => e.ruleId ).join( ', ' )}` );
 });
 
 
 test( 'browser', async t => {
 	const conf = require( '../browser' );
 
-	t.true( isPlainObj( conf ) );
+	t.assert( isPlainObj( conf ) );
 
 	const errors = await runEslint( `'use strict'; window.foo = 'bar';\n`, conf );
 
-	t.true( errors.length === 0, `The number of errors should match an expected value. Errors found: ${errors.map( e => e.ruleId ).join( ', ' )}` );
+	t.assert( errors.length === 0, `The number of errors should match an expected value. Errors found: ${errors.map( e => e.ruleId ).join( ', ' )}` );
 });
 
 
 test( 'legacy', async t => {
 	const conf = require( '../legacy' );
 
-	t.true( isPlainObj( conf ) );
-	t.true( isPlainObj( conf.rules ) );
+	t.assert( isPlainObj( conf ) );
+	t.assert( isPlainObj( conf.rules ) );
 
 
 	/*
@@ -135,12 +135,12 @@ test( 'legacy', async t => {
 		var int = parseInt( '10' );
 	`, conf );
 
-	t.true( errors[0].ruleId === 'comma-dangle' );
-	t.true( errors[1].ruleId === 'quote-props' );
-	t.true( errors[2].ruleId === 'dot-notation' );
-	t.true( errors[3].ruleId === 'radix' );
+	t.assert( errors[0].ruleId === 'comma-dangle' );
+	t.assert( errors[1].ruleId === 'quote-props' );
+	t.assert( errors[2].ruleId === 'dot-notation' );
+	t.assert( errors[3].ruleId === 'radix' );
 
-	t.true( errors.length === 4, `The number of errors should match an expected value. Errors found: ${errors.map( e => e.ruleId ).join( ', ' )}` );
+	t.assert( errors.length === 4, `The number of errors should match an expected value. Errors found: ${errors.map( e => e.ruleId ).join( ', ' )}` );
 	*/
 
 
@@ -152,9 +152,9 @@ test( 'legacy', async t => {
 		var int = parseInt( '10' );
 	`, conf );
 
-	t.true( errors[0].ruleId === 'quote-props' );
-	t.true( errors[1].ruleId === 'dot-notation' );
-	t.true( errors[2].ruleId === 'radix' );
+	t.assert( errors[0].ruleId === 'quote-props' );
+	t.assert( errors[1].ruleId === 'dot-notation' );
+	t.assert( errors[2].ruleId === 'radix' );
 
-	t.true( errors.length === 3, `The number of errors should match an expected value. Errors found: ${errors.map( e => e.ruleId ).join( ', ' )}` );
+	t.assert( errors.length === 3, `The number of errors should match an expected value. Errors found: ${errors.map( e => e.ruleId ).join( ', ' )}` );
 });
